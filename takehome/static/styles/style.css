@@ -1,0 +1,13 @@
+navbar {
+    width: 100%;
+}
+navbar ul {
+    width: 100%;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+navbar ul li {
+    display: inline;
+}
