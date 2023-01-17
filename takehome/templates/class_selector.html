@@ -2,4 +2,6 @@
 {% load static %}
 <link rel="stylesheet" href="{% static 'styles/style.css' %}">
 <title>Class</title>
-<p>{{ class_slug }}</p>
+{% for course in courses %}
+<p>{{ course.name }} - {{ course.shortcode }}</p>
+{% endfor %}
