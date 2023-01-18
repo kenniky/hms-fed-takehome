@@ -10,3 +10,10 @@ class Class(models.Model):
 
     def __str__(self):
         return f'{self.name} - {self.shortcode}'
+
+class ClassSlate(models.Model):
+    learner = models.CharField(max_length=20)
+    classes = models.JSONField()
+
+    def __str__(self):
+        return f'{learner} slate'

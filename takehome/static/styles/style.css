@@ -12,3 +12,15 @@ navbar ul {
 navbar ul li {
     display: inline;
 }
+
+.class-selector-checkbox-div {
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+    border-radius: 4px;
+    padding: 5px;
+}
+
+.class-selector-checkbox:checked ~ .class-selector-checkbox-div {
+    background-color: yellow;
+}
