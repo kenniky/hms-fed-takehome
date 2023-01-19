@@ -24,8 +24,10 @@ The logic would go as follows:
 ````
 - When a class is toggled, run through the following checks.
 - For each pair of classes, check to see if any of their timeslots fall on the same day.
-- If they do, check those timeslots. If both timeslots' start times come before both end times, then the classes overlap. Return the pair of classes as an error.
-- Otherwise keep going.
+- If they do, check those timeslots. If both timeslots' start times come before both end times, then the classes overlap.
+  Record the pair of classes as a timing conflict, ideally with the conflicting timeslots as well.
+- Keep going until all pairs are exhausted. If there are any timing conflicts, display all of them, otherwise don't display anything
+  (nothing is wrong).
 ````
 
 This logic is extensible to checking if two classes fall back-to-back, as well.
