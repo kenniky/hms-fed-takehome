@@ -13,14 +13,62 @@ navbar ul li {
     display: inline;
 }
 
+a {
+    color: black;
+    text-decoration: none;
+}
+
+a:hover {
+    color: blue;
+}
+
+a:active {
+    color: red;
+}
+
+.navbar-item {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    width: 20%;
+}
+
+.navbar-item:hover {
+    background-color: #b1dde6;
+}
+
+.home-nav-button {
+    font-size: 24px;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+    border-radius: 4px;
+    padding: 15px 40px 15px 40px;
+    display: inline-block;
+}
+
+.home-nav-button:hover {
+    background-color: #b1dde6;
+}
+
 .class-selector-checkbox-div {
     border-style: solid;
     border-color: black;
     border-width: 1px;
     border-radius: 4px;
     padding: 5px;
+    display: inline-block;
+    width: 30%;
+}
+
+.class-selector-checkbox-div:hover {
+    background-color: #b5e4ff;
 }
 
 .class-selector-checkbox:checked ~ .class-selector-checkbox-div {
-    background-color: yellow;
+    background-color: #4fa7ff;
+}
+
+.class-selector-submit-button {
+    font-size: 24px;
+    padding: 10px 30px 10px 30px;
 }

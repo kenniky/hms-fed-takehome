@@ -1,0 +1,23 @@
+{% include 'navbar.html' %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'styles/style.css' %}">
+<title>Class Selection</title>
+<center>
+    <h1>
+        {% if courses|length == 0 %}
+            You didn't sign up for any courses!
+        {% else %}
+            You signed up for the following courses:
+        {% endif %}
+    </h1>
+    <ul>
+        {% for course in courses %}
+            <li>{{ course.name }} ({{ course.shortcode }})
+            {% for time in course.times %}
+                <br>
+                {{ time.day_human_readable }} {{ time.starttime_human_readable }}-{{ time.endtime_human_readable }}
+            {% endfor %}
+            </li>
+        {% endfor %}
+    </ul>
+</center>

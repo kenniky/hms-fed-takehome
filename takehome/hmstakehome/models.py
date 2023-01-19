@@ -16,4 +16,4 @@ class ClassSlate(models.Model):
     classes = models.JSONField()
 
     def __str__(self):
-        return f'{learner} slate'
+        return f'{self.learner} slate'

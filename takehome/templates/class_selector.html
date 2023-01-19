@@ -2,22 +2,31 @@
 {% load static %}
 <link rel="stylesheet" href="{% static 'styles/style.css' %}">
 <title>Class</title>
-<form action="{% url 'app:class-selector-submit' %}" method="put">
-    {% csrf_token %}
-    <fieldset>
-        <legend><h1>Select courses</h1></legend>
-        {% for course in courses %}
-            <label for="course-{{ course.shortcode }}" class="class-selector-checkbox-label">
-                <input type="checkbox" name="course-{{ course.shortcode }}" id="course-{{ course.shortcode }}" class="class-selector-checkbox" hidden>
-                <div class="class-selector-checkbox-div">
-                    {{ course.name }} ({{ course.shortcode }})
-                    {% for time in course.times %}
-                        <br>
-                        {{ time.day_human_readable }} {{ time.starttime_human_readable }}-{{ time.endtime_human_readable }}
-                    {% endfor %}
-                </div>
-            </label><br>
-        {% endfor %}
-    </fieldset>
-    <input type="submit" value="Submit">
-</form>
+<center>
+    <form action="{% url 'app:class-selector-submit' %}" method="post">
+        {% csrf_token %}
+        <fieldset>
+            <legend><h1>Select courses</h1></legend>
+            {% for course in courses %}
+                <label for="course-{{ course.shortcode }}" class="class-selector-checkbox-label">
+                    <input type="checkbox" name="course-{{ course.shortcode }}" id="course-{{ course.shortcode }}" class="class-selector-checkbox" hidden>
+                    <div class="class-selector-checkbox-div">
+                        {{ course.name }} ({{ course.shortcode }})
+                        {% for time in course.times %}
+                            <br>
+                            {{ time.day_human_readable }} {{ time.starttime_human_readable }}-{{ time.endtime_human_readable }}
+                        {% endfor %}
+                    </div>
+                </label>
+                {% if forloop.counter|divisibleby:3 %}
+                    <br><br>
+                {% endif %}
+            {% endfor %}
+            {% if not courses|length|divisibleby:3 %}
+                <br><br>
+            {% endif %}
+            <div class="warning"></div>
+            <input class="class-selector-submit-button" type="submit" value="Register">
+        </fieldset>
+    </form>
+</center>
