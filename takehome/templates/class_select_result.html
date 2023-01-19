@@ -10,14 +10,13 @@
             You signed up for the following courses:
         {% endif %}
     </h1>
-    <ul>
-        {% for course in courses %}
-            <li>{{ course.name }} ({{ course.shortcode }})
-            {% for time in course.times %}
-                <br>
-                {{ time.day_human_readable }} {{ time.starttime_human_readable }}-{{ time.endtime_human_readable }}
-            {% endfor %}
-            </li>
+    {% for course in courses %}
+        <div class="course-selection">{{ course.name }} ({{ course.shortcode }})
+        {% for time in course.times %}
+            <br>
+            {{ time.day_human_readable }} {{ time.starttime_human_readable }}-{{ time.endtime_human_readable }}
         {% endfor %}
-    </ul>
+        </div>
+        <br>
+    {% endfor %}
 </center>

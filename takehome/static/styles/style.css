@@ -72,3 +72,13 @@ a:active {
     font-size: 24px;
     padding: 10px 30px 10px 30px;
 }
+
+.course-selection {
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+    border-radius: 4px;
+    padding: 5px;
+    display: inline-block;
+    width: 50%;
+}
